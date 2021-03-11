@@ -356,10 +356,11 @@ class Imager {
 	const text=this.text;
 	const maps=this.maps;
 	const name=this.name;
-	const state = { 'text': text , 'maps':maps };
-	const stateJSON = JSON.stringify(state);
-	window.localStorage.setItem(name,stateJSON);
+	const args = { 'name': name, 'text': text , 'maps':maps };
+	const argsJSON = JSON.stringify(args);
+	window.localStorage.setItem(name,argsJSON);
 	this.message = 'saved as ' + name
+	console.log("data-args='" + argsJSON + "'");	   
     }
 
     load() {
